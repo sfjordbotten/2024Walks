@@ -407,7 +407,7 @@ htmlText  = """
 </html>
 """
 
-with open('test.html', 'w') as f:
+with open('index.html', 'w') as f:
     f.write(htmlText)
 
 # not used - for debug only. Old method of saving fullscreen map
