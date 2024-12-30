@@ -284,12 +284,40 @@ plotDict = {'monthPlot' : monthPlot,
             
 script, divs = embed.components(plotDict)
 
+# generate image code and tag
+pics = os.listdir('images')
+imgTag = '<div class="galcontainer">\n\t<img id="image" src="images/' + pics[0] + '" alt="image"style="max-height:500px; max-width:100%; width:auto; height:auto;">\n'
+imgTag += """\t<!-- Next and previous buttons -->
+\t<a class="prev" onclick="showImg(-1)">&#10094;</a>
+\t<a class="next" onclick="showImg(1)">&#10095;</a>\n
+</div>
+"""
+imgJs = """<script type="text/javascript">
+const image = document.getElementById('image');
+var imageIndex = 0;
+const imagePaths = [""" + ','.join(['"images/' + x + '"' for x in pics]) + """];
+function showImg(inc) {
+    if (imageIndex == 0 && inc < 0){
+        imageIndex = imagePaths.legnth + inc - 1;
+    } else {
+        imageIndex = imageIndex + inc;
+    }
+    
+    if (imageIndex >= imagePaths.length) {
+        imageIndex = imageIndex - imagePaths.length;
+    }
+    image.src = imagePaths[imageIndex]; // Path or URL to image
+}
+</script>
+"""
+# generate text for html
 htmlText  = """
 <!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="w3.css">
         <link rel="stylesheet" href="sidebar.css">
+        <link rel="stylesheet" href="imGal.css">
         
         <script src="https://cdn.bokeh.org/bokeh/release/bokeh-3.6.2.min.js"
             crossorigin="anonymous">
@@ -311,6 +339,7 @@ htmlText  = """
           <a href="#notes">Notes</a>
           <a href="#map">Map</a>
           <a href="#plots">Plots</a>
+          <a href="#pics">Pictures</a>
           <a href="#nerds">For Nerds</a>
         </div>
         
@@ -377,7 +406,9 @@ htmlText  = """
             """<h1 id="plots">Data Plots</h1>\n""" + \
                 "\t\t" + divs['monthPlot'] + "\n" + \
                 "\t\t" + divs['weekPlot'] + "\n" + \
-"""         <h1 id="nerds">Info for Nerds</h1>
+"""         <h1 id="pics">Pictures</h1>
+            """ + imgTag + '\n' + imgJs + """\n
+            <h1 id="nerds">Info for Nerds</h1>
                 <p>This section has a bit of info about how this page was made</p>
                 <ul>
                     <li>Data was tracked in MapMyRun as I had used this previously. 
