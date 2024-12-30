@@ -298,7 +298,7 @@ var imageIndex = 0;
 const imagePaths = [""" + ','.join(['"images/' + x + '"' for x in pics]) + """];
 function showImg(inc) {
     if (imageIndex == 0 && inc < 0){
-        imageIndex = imagePaths.legnth + inc - 1;
+        imageIndex = imagePaths.length + inc;
     } else {
         imageIndex = imageIndex + inc;
     }

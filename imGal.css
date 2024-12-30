@@ -5,9 +5,9 @@
 /* Position the image container (needed to position the left and right arrows) */
 .galcontainer {
   position: relative;
-  max-height: 500px;
+  /*max-height: 500px;
   height:auto;
-  width:auto;
+  width:auto;*/
 }
 
 
@@ -24,7 +24,7 @@
   top: 40%;
   width: auto;
   padding: 16px;
-  color: white;
+  color: #f5bf42;
   font-weight: bold;
   font-size: 20px;
   border-radius: 0 3px 3px 0;
