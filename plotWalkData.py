@@ -350,7 +350,12 @@ htmlText  = """
                 to the pub, lunchtime walks at work, etc. I tracked all the activities that I wanted to count
                 and have plotted the results here. This ended up being a bit of a Britain farewell tour as at
                 the beginning of 2025 I left the UK for a new adventure. In the end, I logged <b>
-                """ + str(round(max(monthCumulative), 1)) + """km </b> of walking/hiking in 2024!
+                """ + str(round(max(monthCumulative), 1)) + """km/""" + str(round(max(monthCumulative)/1.6, 1)) + \
+                """miles</b> of walking/hiking in 2024 - That works out to 
+                """ + str(round(max(monthCumulative)/12, 1)) + """km/""" + str(round(max(monthCumulative)/12/1.6, 1)) + \
+                """miles per month or """ + \
+                str(round(max(monthCumulative)/52, 1)) + """km/""" + str(round(max(monthCumulative)/52/1.6, 1)) + \
+                """miles per week on average!
                 </p>
                 <p>Walks included significant sections of the following notable long distance paths:</p>
                 <ul>
@@ -391,6 +396,7 @@ htmlText  = """
                     <li><a href="https://ldwa.org.uk/ldp/members/show_path.php?path_name=Cambrian+Way" target="_blank">Cambrian Way</a></li>
                     <li><a href="https://ldwa.org.uk/ldp/members/show_path.php?path_name=White+Horse+Trail" target="_blank">White Horse Trail</a></li>
                     <li><a href="https://ldwa.org.uk/ldp/members/show_path.php?path_name=Pennine+Way+National+Trail" target="_blank">Pennine Way National Trail</a></li>
+                    <li><a href="https://ldwa.org.uk/ldp/members/show_path.php?path_name=Cotswold+Way+National+Trail" target="_blank">Cotswold Way National Trail</a></li>
                     <li>And probably others I have forgotten...</li>
                 </ul>
                 <p>Notes on functionality:</p>

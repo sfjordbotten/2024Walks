@@ -12,8 +12,12 @@ downloadFolder = r'C:\Users\scott\Downloads'
 # # file with lifetime data - This is up to 2-Nov-2024
 # lifetimeDataFile = "user41688257_workout_history.csv"
 
-# file with lifetime data - 3-Nov-2024 to 27-Dec-2024
-lifetimeDataFile = "user41688257_workout_history_2024-12-28.csv"
+# # file with lifetime data - 3-Nov-2024 to 27-Dec-2024
+# lifetimeDataFile = "user41688257_workout_history_2024-12-28.csv"
+
+# file with 28-Dec-2024 to end of year
+lifetimeDataFile = "user41688257_workout_history_2024-12-31.csv"
+
 # year to download
 year = 2024
 
